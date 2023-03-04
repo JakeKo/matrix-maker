@@ -36,3 +36,20 @@
     transform: rotate(360deg);
   }
 }
+
+.matrix {
+  display: grid;
+  gap: 4px;
+}
+
+.on {
+  height: 50px;
+  width: 50px;
+  background: purple;
+}
+
+.off {
+  height: 50px;
+  width: 50px;
+  background: grey;
+}

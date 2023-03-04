@@ -1,5 +1,6 @@
 import logo from "./logo.svg";
 import "./App.css";
+import Matrix from "./Matrix";
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
           Learn React
         </a>
       </header>
+      <Matrix height={2} width={3} bits={0b011001} />
     </div>
   );
 }
