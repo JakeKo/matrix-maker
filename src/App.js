@@ -32,10 +32,16 @@ function App() {
           />
         ))}
       </div>
-      <div className="segments">
-        {segments.map((segment, i) => (
-          <Matrix key={i} height={height} width={width} bits={segment} />
-        ))}
+      <div className="segments-container">
+        <div className="segments-container-title">Segments</div>
+        <div className="segments">
+          {segments.map((segment, i) => (
+            <Matrix key={i} height={height} width={width} bits={segment} />
+          ))}
+        </div>
+        <div className="segments-container-counter">
+          Total: {segments.length}
+        </div>
       </div>
     </div>
   );
