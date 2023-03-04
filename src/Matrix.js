@@ -11,12 +11,13 @@ function Matrix({ height, width, bits }) {
     <div
       className="matrix"
       style={{
-        gridTemplateColumns: `repeat(${width}, min-content)`,
-        gridTemplateRows: `repeat(${height}, min-content)`,
+        gridTemplateColumns: `repeat(${width}, 1fr)`,
+        gridTemplateRows: `repeat(${height}, 1fr)`,
+        aspectRatio: `${width} / ${height}`,
       }}
     >
       {bitList.map((bit, i) => (
-        <div key={Math.random()} className={bit ? "on" : "off"} />
+        <div key={i} className={bit ? "on" : "off"} />
       ))}
     </div>
   );

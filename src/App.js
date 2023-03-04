@@ -9,7 +9,6 @@ function App() {
   const [width, setWidth] = useState(4);
   const [matrices, setMatrices] = useState([0b111001, 0b101010]);
   const segments = [...calculateSegments(height * width, matrices)];
-  console.log(segments);
 
   function updateMatrix(index, newMatrix) {
     const newMatrices = [
@@ -22,7 +21,7 @@ function App() {
 
   return (
     <div className="app">
-      <div style={{ display: "flex", gap: "24px" }}>
+      <div className="canvas">
         {matrices.map((matrix, i) => (
           <InteractiveMatrix
             key={i}
@@ -33,9 +32,7 @@ function App() {
           />
         ))}
       </div>
-      <hr />
-      Segments: {segments.length}
-      <div style={{ display: "flex", gap: "24px" }}>
+      <div className="segments">
         {segments.map((segment, i) => (
           <Matrix key={i} height={height} width={width} bits={segment} />
         ))}

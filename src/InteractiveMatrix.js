@@ -16,13 +16,14 @@ function InteractiveMatrix({ height, width, bits, onBitsChange }) {
     <div
       className="matrix"
       style={{
-        gridTemplateColumns: `repeat(${width}, min-content)`,
-        gridTemplateRows: `repeat(${height}, min-content)`,
+        gridTemplateColumns: `repeat(${width}, 1fr)`,
+        gridTemplateRows: `repeat(${height}, 1fr)`,
+        aspectRatio: `${width} / ${height}`,
       }}
     >
       {bitList.map((bit, i) => (
         <div
-          key={Math.random()}
+          key={i}
           className={bit ? "on" : "off"}
           onMouseDown={() => {
             flipBit(bitCount - i - 1);
