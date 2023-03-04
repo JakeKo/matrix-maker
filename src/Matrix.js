@@ -1,15 +1,10 @@
 import "./App.css";
 
-function InteractiveMatrix({ height, width, bits, onBitsChange }) {
+function Matrix({ height, width, bits }) {
   const bitCount = height * width;
   const bitList = [];
   for (let i = bitCount - 1; i >= 0; i--) {
     bitList.push((bits >> i) & 1);
-  }
-
-  function flipBit(index) {
-    const newBits = bits ^ (1 << index);
-    onBitsChange(newBits);
   }
 
   return (
@@ -21,16 +16,10 @@ function InteractiveMatrix({ height, width, bits, onBitsChange }) {
       }}
     >
       {bitList.map((bit, i) => (
-        <div
-          key={Math.random()}
-          className={bit ? "on" : "off"}
-          onMouseDown={() => {
-            flipBit(bitCount - i - 1);
-          }}
-        />
+        <div key={Math.random()} className={bit ? "on" : "off"} />
       ))}
     </div>
   );
 }
 
-export default InteractiveMatrix;
+export default Matrix;

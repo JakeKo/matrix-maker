@@ -41,6 +41,10 @@ function makeSegmentsUnique(superSegments) {
 }
 
 function calculateSegments(bitCount, matrices) {
+  if (matrices.length === 0) {
+    return [];
+  }
+
   const superSegments = [...calculateSuperSegments(bitCount, matrices)].sort(
     (a, b) => (a < b ? -1 : 1)
   );
