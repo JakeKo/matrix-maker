@@ -43,33 +43,41 @@ function App() {
 
   return (
     <div className="app">
-      <div className="canvas">
-        <div className="controls">
-          Height:
-          <input
-            type="number"
-            value={height}
-            min={1}
-            onChange={(event) => updateHeight(event.target.value)}
-          />
-          Width:
-          <input
-            type="number"
-            value={width}
-            min={1}
-            onChange={(event) => updateWidth(event.target.value)}
-          />
-          <button
-            className="new-matrix-button"
-            type="button"
-            onClick={addMatrix}
-          >
-            +
-          </button>
-          <button type="button" onClick={resetMatrices}>
-            Reset
-          </button>
+      <div className="controls">
+        <button className="positive-button" type="button" onClick={addMatrix}>
+          + Add Display
+        </button>
+        <div className="row">
+          <div className="input-label-group">
+            <label htmlFor="height">H</label>
+            <input
+              name="height"
+              type="number"
+              value={height}
+              min={1}
+              onChange={(event) => updateHeight(event.target.value)}
+            />
+          </div>
+          <div className="input-label-group">
+            <label htmlFor="width">W</label>
+            <input
+              name="width"
+              type="number"
+              value={width}
+              min={1}
+              onChange={(event) => updateWidth(event.target.value)}
+            />
+          </div>
         </div>
+        <button
+          className="negative-button"
+          type="button"
+          onClick={resetMatrices}
+        >
+          Reset
+        </button>
+      </div>
+      <div className="canvas">
         {matrices.map((matrix, i) => (
           <div>
             <InteractiveMatrix
