@@ -18,6 +18,15 @@ body {
   position: relative;
 }
 
+.new-matrix-button {
+  background: green;
+  color: white;
+  font-family: monospace;
+  font-size: 32px;
+  border: none;
+  cursor: pointer;
+}
+
 .controls {
   position: absolute;
   bottom: 0;

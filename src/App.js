@@ -23,6 +23,10 @@ function App() {
     setMatrices([...matrices, 0]);
   }
 
+  function removeMatrix(index) {
+    setMatrices([...matrices.slice(0, index), ...matrices.slice(index + 1)]);
+  }
+
   function updateHeight(newHeight) {
     setHeight(newHeight);
     resetMatrices();
@@ -45,30 +49,41 @@ function App() {
           <input
             type="number"
             value={height}
+            min={1}
             onChange={(event) => updateHeight(event.target.value)}
           />
           Width:
           <input
             type="number"
             value={width}
+            min={1}
             onChange={(event) => updateWidth(event.target.value)}
           />
+          <button
+            className="new-matrix-button"
+            type="button"
+            onClick={addMatrix}
+          >
+            +
+          </button>
           <button type="button" onClick={resetMatrices}>
             Reset
           </button>
         </div>
         {matrices.map((matrix, i) => (
-          <InteractiveMatrix
-            key={i}
-            height={height}
-            width={width}
-            bits={matrix}
-            onBitsChange={(newMatrix) => updateMatrix(i, newMatrix)}
-          />
+          <div>
+            <InteractiveMatrix
+              key={i}
+              height={height}
+              width={width}
+              bits={matrix}
+              onBitsChange={(newMatrix) => updateMatrix(i, newMatrix)}
+            />
+            {matrices.length > 1 && (
+              <button onClick={() => removeMatrix(i)}>Remove</button>
+            )}
+          </div>
         ))}
-        <button type="button" onClick={addMatrix}>
-          +
-        </button>
       </div>
       <div className="segments-container">
         <div className="segments-container-title">Segments</div>
