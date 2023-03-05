@@ -19,9 +19,44 @@ function App() {
     setMatrices(newMatrices);
   }
 
+  function addMatrix() {
+    setMatrices([...matrices, 0]);
+  }
+
+  function updateHeight(newHeight) {
+    setHeight(newHeight);
+    resetMatrices();
+  }
+
+  function updateWidth(newWidth) {
+    setWidth(newWidth);
+    resetMatrices();
+  }
+
+  function resetMatrices() {
+    setMatrices([0]);
+  }
+
   return (
     <div className="app">
       <div className="canvas">
+        <div className="controls">
+          Height:
+          <input
+            type="number"
+            value={height}
+            onChange={(event) => updateHeight(event.target.value)}
+          />
+          Width:
+          <input
+            type="number"
+            value={width}
+            onChange={(event) => updateWidth(event.target.value)}
+          />
+          <button type="button" onClick={resetMatrices}>
+            Reset
+          </button>
+        </div>
         {matrices.map((matrix, i) => (
           <InteractiveMatrix
             key={i}
@@ -31,6 +66,9 @@ function App() {
             onBitsChange={(newMatrix) => updateMatrix(i, newMatrix)}
           />
         ))}
+        <button type="button" onClick={addMatrix}>
+          +
+        </button>
       </div>
       <div className="segments-container">
         <div className="segments-container-title">Segments</div>

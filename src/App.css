@@ -15,6 +15,15 @@ body {
   grid-template-columns: repeat(5, auto);
   gap: 24px;
   padding: 24px;
+  position: relative;
+}
+
+.controls {
+  position: absolute;
+  bottom: 0;
+  left: 64px;
+  padding: 24px;
+  box-sizing: border-box;
 }
 
 .segments-container {
@@ -22,6 +31,7 @@ body {
   border-left: 1px solid black;
   box-sizing: border-box;
   grid-template-rows: min-content 1fr min-content;
+  height: 100vh;
 }
 
 .segments-container-title {
@@ -50,6 +60,7 @@ body {
   gap: 24px;
   padding: 24px;
   box-sizing: border-box;
+  overflow-y: scroll;
 }
 
 .matrix {
