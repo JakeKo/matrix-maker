@@ -44,8 +44,15 @@ function App() {
   return (
     <div className="app">
       <div className="controls">
+        Matrix Maker
+        <div className="row">
+          Build a set of configurations you would like to represent with a
+          matrix display and see what independent bit configurations are needed
+          to create all of them.
+        </div>
+        <hr style={{ width: "100%" }} />
         <button className="positive-button" type="button" onClick={addMatrix}>
-          + Add Display
+          Add Display
         </button>
         <div className="row">
           <div className="input-label-group">
