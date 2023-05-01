@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/matrix-maker/static/css/main.bc655094.css",
+    "main.js": "/matrix-maker/static/js/main.c394535e.js",
+    "static/js/787.2ad5bb6e.chunk.js": "/matrix-maker/static/js/787.2ad5bb6e.chunk.js",
+    "index.html": "/matrix-maker/index.html",
+    "main.bc655094.css.map": "/matrix-maker/static/css/main.bc655094.css.map",
+    "main.c394535e.js.map": "/matrix-maker/static/js/main.c394535e.js.map",
+    "787.2ad5bb6e.chunk.js.map": "/matrix-maker/static/js/787.2ad5bb6e.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.bc655094.css",
+    "static/js/main.c394535e.js"
+  ]
+}
